@@ -47,7 +47,7 @@ class NFe extends Model
      *
      * @var string
      */
-    protected $dateFormat = "U";
+    // protected $dateFormat = "U";
 
     /**
      * The attributes that are mass assignable.
@@ -64,9 +64,9 @@ class NFe extends Model
      *
      * @var array
      */
-    protected $hidden = [
+    // protected $hidden = [
         
-    ];
+    // ];
 
     /**
      * The attributes that should be cast to native types.
