@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NFe\ShowNFeRequest;
 use App\Http\Resources\NFe\NFeResource;
+use App\Http\Resources\NFe\NFeResourceCollection;
 
 class NFeController extends Controller
 {
@@ -15,10 +16,12 @@ class NFeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     //
-    // }
+    public function index()
+    {
+        return (new NFeResourceCollection(NFe::all()))
+            ->response()
+            ->setStatusCode(200);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -38,9 +41,9 @@ class NFeController extends Controller
      * @param  \App\Http\Requests\NFe\ShowNFeRequest  $request
      * @return \Illuminate\Http\Response | \App\Http\Resources\NFe\NFeResource 
      */
-    public function show(NFe $nFe, ShowNFeRequest $request)
+    public function show(NFe $nfe, ShowNFeRequest $request)
     {
-        return (new NFeResource($nFe))
+        return (new NFeResource($nfe))
             ->response()
             ->setStatusCode(200);
     }
