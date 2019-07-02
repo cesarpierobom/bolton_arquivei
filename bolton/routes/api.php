@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+Route::get("/v1/nfes/{nfe}", 'API\v1\NFe\NFeController@show')->name("nfe.show");
+
+Route::get("/v1/nfes/", 'API\v1\NFe\NFeController@index')->name("nfe.index");
+
+Route::post("/v1/nfes/arquivei/import", 'API\v1\Importacao\NFe\ImportNFeController@import')->name("nfe.import");

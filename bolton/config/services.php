@@ -44,4 +44,13 @@ return [
         ],
     ],
 
+
+    "arquivei" => [
+        "domain" => env("ARQUIVEI_BASE_URL", null),
+        "headers" => [
+            "x-api-id" => env("ARQUIVEI_API_ID", null),
+            "x-api-key" => env("ARQUIVEI_API_KEY", null),
+            "content-type" => "application/json"
+        ]
+    ]
 ];
