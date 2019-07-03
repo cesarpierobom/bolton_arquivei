@@ -16,7 +16,7 @@ class CreateNFesTable extends Migration
         Schema::create("nfes", function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->string("access_key");
-            $table->string("value");
+            $table->decimal("value", 30, 10);
             $table->timestamps();
         });
     }

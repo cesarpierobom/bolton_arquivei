@@ -18,7 +18,7 @@ class FetchNFes implements FetchNFeRequestInterface
         try {
             $response = $this->client->request(
                 "GET",
-                config("services.arquivei.domain") . "/nfe/received",
+                config("services.arquivei.domain") . "/v1/nfe/received",
                 [
                     "headers" => config("services.arquivei.headers"),
                     "query" => $query
